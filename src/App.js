@@ -33,10 +33,10 @@ function App() {
         return [cards, setCards]
     }
 
-    const [cards, setCards] = useCards(loadCards(listName))
-    const [cards2, setCards2] = useCards(loadCards(listName2))
-    const [cards3, setCards3] = useCards(loadCards(listName3))
-    const [cards4, setCards4] = useCards(loadCards(listName4))
+    const [cards, setCards] = useCards(listName)
+    const [cards2, setCards2] = useCards(listName2)
+    const [cards3, setCards3] = useCards(listName3)
+    const [cards4, setCards4] = useCards(listName4)
 
     // #8e6e95 #39a59c #344759 #e8741e
     return (
