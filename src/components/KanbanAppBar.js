@@ -26,7 +26,7 @@ export default function KanbanAppBar() {
 
     return (
         <div className={classes.root}>
-            <AppBar position="static" style={{backgroundImage: 'url(\'/background.png\')'}}>
+            <AppBar position="static" style={{backgroundImage: 'url(https://i.imgur.com/oDgBYS2.png)'}}>
                 <Toolbar>
                     <Typography variant="h6" className={classes.title}>
                         {'Simple Kanban Board by '}
