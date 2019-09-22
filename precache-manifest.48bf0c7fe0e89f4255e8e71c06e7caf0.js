@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e826daa762614109f7c207efaa956888",
+    "revision": "02c7d55722d22948d19c13bc81e07146",
     "url": "/simple-kanban-board/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/simple-kanban-board/static/css/2.f15d76b1.chunk.css"
   },
   {
-    "revision": "47dbced9d25262703154",
+    "revision": "ea0605a276ad2dd20db9",
     "url": "/simple-kanban-board/static/css/main.809b1daf.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/simple-kanban-board/static/js/2.b3f7da0b.chunk.js"
   },
   {
-    "revision": "47dbced9d25262703154",
-    "url": "/simple-kanban-board/static/js/main.582953a4.chunk.js"
+    "revision": "ea0605a276ad2dd20db9",
+    "url": "/simple-kanban-board/static/js/main.06cba3ec.chunk.js"
   },
   {
     "revision": "4f565acb9312eca80d5f",
