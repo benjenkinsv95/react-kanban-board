@@ -45,7 +45,7 @@ function App() {
 
             <div className='kanban'>
                 <Grid container spacing={3}>
-                    <Grid item lg={3}>
+                    <Grid item xs={12} sm={6} md={4} lg={3}>
                         <KanbanList
                             name={listName}
                             titleBackgroundColor="#8e6e95"
@@ -54,7 +54,7 @@ function App() {
 
                         />
                     </Grid>
-                    <Grid item lg={3}>
+                    <Grid item xs={12} sm={6} md={4} lg={3}>
                         <KanbanList
                             name={listName2}
                             titleBackgroundColor="#39a59c"
@@ -64,7 +64,7 @@ function App() {
 
                         />
                     </Grid>
-                    <Grid item lg={3}>
+                    <Grid item xs={12} sm={6} md={4}  lg={3}>
                         <KanbanList
                             name={listName3}
                             titleBackgroundColor="#344759"
@@ -74,7 +74,7 @@ function App() {
 
                         />
                     </Grid>
-                    <Grid item lg={3}>
+                    <Grid item xs={12} sm={6} md={4} lg={3}>
                         <KanbanList
                             name={listName4}
                             titleBackgroundColor="#e8741e"
