@@ -43,7 +43,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Kanban Board Screen Shot][kanban-screenshot]]("recording.gif")
+[![Kanban Board Screen Shot][kanban-screenshot]](recording.gif)
 
 
 ### Built With
