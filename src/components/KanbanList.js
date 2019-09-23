@@ -8,7 +8,8 @@ import KanbanCard from './KanbanCard'
 import './KanbanList.css'
 
 const KanbanList = ({name, titleBackgroundColor, cards, setCards, leftCards, setLeftCards, rightCards, setRightCards}) => {
-    const [newItem, setNewItem] = useState('')
+    const [newTitle, setNewTitle] = useState('')
+    const [newText, setNewText] = useState('')
 
 
     const cardsJsx = cards.map(({title, id, text}) => (
@@ -26,20 +27,24 @@ const KanbanList = ({name, titleBackgroundColor, cards, setCards, leftCards, set
 
         />
     ))
-    // const cardsJsx = cards.map(({title, id}) => (
-    //     <div key={id}>{title}</div>
-    // ))
+
     const handleClick = () => {
-        const newCard = {id: uuidv4(), title: newItem}
+        const newCard = {id: uuidv4(), title: newTitle, text: newText}
         const newCards = [...cards, newCard]
         setCards(newCards)
         saveCards(name, newCards)
-        setNewItem('')
+        setNewTitle('')
     }
 
     const handleChange = event => {
-        setNewItem(event.target.value)
+        setNewTitle(event.target.value)
     }
+
+    const styles = {
+        input: {
+            color: titleBackgroundColor
+        }
+    };
 
     return (
         <div className='kanban-list' style={{width: '100%'}}>
@@ -58,18 +63,39 @@ const KanbanList = ({name, titleBackgroundColor, cards, setCards, leftCards, set
             </div>
             {cardsJsx}
 
-            <div style={{backgroundColor: 'white'}}>
-                <div style={{marginLeft: 8, marginRight: 8}}>
-                    <TextField
-                        id="standard-with-placeholder"
-                        label="New Card"
-                        placeholder="Enter new card"
-                        margin="normal"
-                        onChange={handleChange}
-                        value={newItem}
-                        fullWidth
-                    />
+            <div style={{backgroundColor: 'white', paddingLeft: 8, paddingRight: 8}}>
+                <div style={{
+                    color: titleBackgroundColor,
+                    height: 30,
+                    backgroundColor: 'white',
+                    fontSize: 24,
+                    textAlign: 'center',
+                    zIndex: 1100,
+                    width: '100%',
+                    textDecoration: 'none',
+                    textShadow: '1px 1px 0 #fff, -1px 1px 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff',
+                    boxShadow: `inset 0 -1px 0 0 #fff, inset 0 -3px 0 0 ${titleBackgroundColor}`
+                }}>
+                    Add Card
                 </div>
+                <TextField
+                    label="Card Title"
+                    placeholder="My amazing task!"
+                    margin="normal"
+                    onChange={handleChange}
+                    value={newTitle}
+                    fullWidth
+                    required
+                />
+                <TextField
+                    label="Card Details"
+                    placeholder="This task requires..."
+                    margin="normal"
+                    onChange={e => setNewText(e.target.value)}
+                    value={newText}
+                    fullWidth
+                    required
+                />
 
                 <div style={{display: 'flex'}}>
                     <Button

@@ -2,7 +2,7 @@
   "name": "triplebyte-sep2019",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://benjenkinsv95.github.io/simple-kanban-board/",
+  "homepage": "https://benjenkinsv95.github.io/react-kanban-board/",
   "dependencies": {
     "@material-ui/core": "^4.4.2",
     "@material-ui/icons": "^4.4.1",
