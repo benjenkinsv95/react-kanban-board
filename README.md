@@ -7,6 +7,9 @@
 
 
 <br />
+
+
+
 <p align="center">
   <h3 align="center">React Kanban Board</h3>
 
@@ -21,7 +24,7 @@
   </p>
 </p>
 
-
+![Kanban Board Screen Shot](recording.gif)
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
@@ -42,9 +45,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Kanban Board Screen Shot][kanban-screenshot]](recording.gif)
-
 
 ### Built With
 
@@ -117,4 +117,3 @@ Project Link: [https://github.com/benjenkinsv95/react-kanban-board](https://gith
 [license-url]: https://github.com/benjenkinsv95/react-kanban-board/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/benjenkinsv95
-[product-screenshot]: images/screenshot.png
