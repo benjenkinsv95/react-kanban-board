@@ -13,7 +13,7 @@
   <p align="center">
     A React and Material UI based Kanban Board.
     <br />
-    <a href="https://github.com/benjenkinsv95/react-kanban-board">View Demo</a>
+    <a href="https://benjenkinsv95.github.io/react-kanban-board/">View Demo</a>
     ·
     <a href="https://github.com/benjenkinsv95/react-kanban-board/issues">Report Bug</a>
     ·
@@ -43,33 +43,17 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`benjenkinsv95`, `repo`, `twitter_handle`, `email`
+[![Kanban Board Screen Shot][kanban-screenshot]]("recording.gif")
 
 
 ### Built With
 
-* []()
-* []()
-* []()
+* React
+* Material UI
 
-
-
-<!-- GETTING STARTED -->
 ## Getting Started
 
 To get a local copy up and running follow these simple steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-```sh
-npm install npm@latest -g
-```
 
 ### Installation
  
@@ -81,19 +65,11 @@ git clone https:://github.com/benjenkinsv95/react-kanban-board.git
 ```sh
 npm install
 ```
+3. Start Website
+```sh
+npm run start
+```
 
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
-
-<!-- ROADMAP -->
 ## Roadmap
 
 See the [open issues](https://github.com/benjenkinsv95/react-kanban-board/issues) for a list of proposed features (and known issues).
@@ -126,19 +102,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 Your Name - [@benjenkinsv95](https://twitter.com/benjenkinsv95) - benjenkinsv95@gmail.com
 
 Project Link: [https://github.com/benjenkinsv95/react-kanban-board](https://github.com/benjenkinsv95/react-kanban-board)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* []()
-* []()
-* []()
-
-
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

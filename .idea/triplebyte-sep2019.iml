@@ -2,8 +2,8 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/../triplebyte-sep2019/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../triplebyte-sep2019/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/../triplebyte-sep2019/temp" />
       <excludeFolder url="file://$MODULE_DIR$/../triplebyte-sep2019/tmp" />
     </content>

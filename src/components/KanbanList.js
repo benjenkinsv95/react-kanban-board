@@ -34,6 +34,7 @@ const KanbanList = ({name, titleBackgroundColor, cards, setCards, leftCards, set
         setCards(newCards)
         saveCards(name, newCards)
         setNewTitle('')
+        setNewText('')
     }
 
     const handleChange = event => {

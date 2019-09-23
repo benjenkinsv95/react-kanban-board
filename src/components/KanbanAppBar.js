@@ -29,7 +29,7 @@ export default function KanbanAppBar() {
             <AppBar position="static" style={{backgroundImage: 'url(https://i.imgur.com/oDgBYS2.png)'}}>
                 <Toolbar>
                     <Typography variant="h6" className={classes.title}>
-                        {'Simple Kanban Board by '}
+                        {'React Kanban Board by '}
                         <Link style={{color: '#e8741e'}} href='http://www.ben-jenkins.com'>
                             Ben Jenkins
                         </Link>
