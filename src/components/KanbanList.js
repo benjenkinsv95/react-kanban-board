@@ -7,32 +7,28 @@ import {saveCards} from '../lib/card-persistence'
 import KanbanCard from './KanbanCard'
 import './KanbanList.css'
 
-const KanbanList = ({name, titleBackgroundColor, cards, setCards, leftCards, setLeftCards, rightCards, setRightCards}) => {
+const KanbanList = ({kanbanList, leftKanbanList, rightKanbanList}) => {
     const [newTitle, setNewTitle] = useState('')
     const [newText, setNewText] = useState('')
 
 
-    const cardsJsx = cards.map(({title, id, text}) => (
+    const cardsJsx = kanbanList.cards.map(({title, id, text}) => (
         <KanbanCard
             id={id}
             key={id}
             title={title}
             text={text}
-            cards={cards}
-            setCards={setCards}
-            leftCards={leftCards}
-            setLeftCards={setLeftCards}
-            rightCards={rightCards}
-            setRightCards={setRightCards}
-
+            kanbanList={kanbanList}
+            leftKanbanList={leftKanbanList}
+            rightKanbanList={rightKanbanList}
         />
     ))
 
     const handleClick = () => {
         const newCard = {id: uuidv4(), title: newTitle, text: newText}
-        const newCards = [...cards, newCard]
-        setCards(newCards)
-        saveCards(name, newCards)
+        const newCards = [...kanbanList.cards, newCard]
+        kanbanList.setCards(newCards)
+        saveCards(kanbanList.name, newCards)
         setNewTitle('')
         setNewText('')
     }
@@ -41,17 +37,11 @@ const KanbanList = ({name, titleBackgroundColor, cards, setCards, leftCards, set
         setNewTitle(event.target.value)
     }
 
-    const styles = {
-        input: {
-            color: titleBackgroundColor
-        }
-    };
-
     return (
         <div className='kanban-list' style={{width: '100%'}}>
             <div style={{paddingBottom: 8, backgroundColor: 'white'}}>
                 <div style={{
-                    backgroundColor: titleBackgroundColor,
+                    backgroundColor: kanbanList.titleBackgroundColor,
                     height: 50,
                     color: 'white',
                     fontSize: 40,
@@ -59,14 +49,14 @@ const KanbanList = ({name, titleBackgroundColor, cards, setCards, leftCards, set
                     boxShadow: '0px 4px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)',
                     zIndex: 1100
                 }}>
-                    {name}
+                    {kanbanList.name}
                 </div>
             </div>
             {cardsJsx}
 
             <div style={{backgroundColor: 'white', paddingLeft: 8, paddingRight: 8}}>
                 <div style={{
-                    color: titleBackgroundColor,
+                    color: kanbanList.titleBackgroundColor,
                     height: 30,
                     backgroundColor: 'white',
                     fontSize: 24,
@@ -75,7 +65,7 @@ const KanbanList = ({name, titleBackgroundColor, cards, setCards, leftCards, set
                     width: '100%',
                     textDecoration: 'none',
                     textShadow: '1px 1px 0 #fff, -1px 1px 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff',
-                    boxShadow: `inset 0 -1px 0 0 #fff, inset 0 -3px 0 0 ${titleBackgroundColor}`
+                    boxShadow: `inset 0 -1px 0 0 #fff, inset 0 -3px 0 0 ${kanbanList.titleBackgroundColor}`
                 }}>
                     Add Card
                 </div>
@@ -104,7 +94,7 @@ const KanbanList = ({name, titleBackgroundColor, cards, setCards, leftCards, set
                             marginLeft: 'auto',
                             marginRight: 8,
                             marginBottom: 8,
-                            backgroundColor: titleBackgroundColor,
+                            backgroundColor: kanbanList.titleBackgroundColor,
                             color: 'white'
                         }}
                         onClick={handleClick}

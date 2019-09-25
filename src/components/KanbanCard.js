@@ -10,22 +10,22 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import React from 'react'
 import './KanbanCard.css'
 
-const KanbanCard = ({id, listTitle, title, text, cards, setCards, leftCards, setLeftCards, rightCards, setRightCards}) => {
+const KanbanCard = ({id, title, text, kanbanList, leftKanbanList, rightKanbanList}) => {
     const moveLeft = () => {
-        const existingCard = cards.find(card => card.id === id)
-        const newCards = cards.filter(card => card.id !== id)
-        setCards(newCards)
-        setLeftCards([...leftCards, existingCard])
+        const existingCard = kanbanList.cards.find(card => card.id === id)
+        const newCards = kanbanList.cards.filter(card => card.id !== id)
+        kanbanList.setCards(newCards)
+        leftKanbanList.setCards([...leftKanbanList.cards, existingCard])
     }
     const moveRight = () => {
-        const existingCard = cards.find(card => card.id === id)
-        const newCards = cards.filter(card => card.id !== id)
-        setCards(newCards)
-        setRightCards([...rightCards, existingCard])
+        const existingCard = kanbanList.cards.find(card => card.id === id)
+        const newCards = kanbanList.cards.filter(card => card.id !== id)
+        kanbanList.setCards(newCards)
+        rightKanbanList.setCards([...rightKanbanList.cards, existingCard])
     }
     const removeCard = () => {
-        const newCards = cards.filter(card => card.id !== id)
-        setCards(newCards)
+        const newCards = kanbanList.cards.filter(card => card.id !== id)
+        kanbanList.setCards(newCards)
     }
     return (
         <Card className='card'>
@@ -51,13 +51,13 @@ const KanbanCard = ({id, listTitle, title, text, cards, setCards, leftCards, set
             <CardActions>
                 <Grid container spacing={1}>
                     <Grid item xs>
-                        {leftCards && <Button size="small"><ChevronLeftIcon onClick={moveLeft}/></Button>}
+                        {leftKanbanList && <Button size="small"><ChevronLeftIcon onClick={moveLeft}/></Button>}
                     </Grid>
                     <Grid item xs={6}>
 
                     </Grid>
                     <Grid item xs>
-                        {rightCards && <Button size="small"><ChevronRightIcon onClick={moveRight}/></Button>}
+                        {rightKanbanList && <Button size="small"><ChevronRightIcon onClick={moveRight}/></Button>}
                     </Grid>
                 </Grid>
             </CardActions>

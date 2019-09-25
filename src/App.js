@@ -8,11 +8,11 @@ import KanbanAppBar from './components/KanbanAppBar'
 import KanbanList from './components/KanbanList'
 import {saveCards} from './lib/card-persistence'
 
+
+
 function App() {
-    const listName = 'Todo'
-    const listName2 = 'Doing'
-    const listName3 = 'Reviewing'
-    const listName4 = 'Done'
+
+
     const loadCards = (name) => {
         const defaultCards = [
             {id: uuidv4(), title: 'An amazing feature', text: 'This feature is super amazing because of reasons.'},
@@ -33,56 +33,41 @@ function App() {
         return [cards, setCards]
     }
 
-    const [cards, setCards] = useCards(listName)
-    const [cards2, setCards2] = useCards(listName2)
-    const [cards3, setCards3] = useCards(listName3)
-    const [cards4, setCards4] = useCards(listName4)
+    const useKanbanList = (name, titleBackgroundColor) => {
+        const [cards, setCards] = useCards(name)
+
+        return {
+            name,
+            titleBackgroundColor,
+            cards,
+            setCards
+        }
+    }
+
+    const kanbanLists = [
+         useKanbanList('Todo', '#8e6e95'),
+         useKanbanList('Doing', "#39a59c"),
+         useKanbanList('Reviewing', "#344759"),
+         useKanbanList('Done', "#e8741e")
+    ]
+
+    const kanbanListsJsx = kanbanLists.map((kanbanList, i) => (
+        <Grid item xs={12} sm={6} md={4} lg={3}>
+            <KanbanList
+                kanbanList={kanbanList}
+                leftKanbanList={i >= 1 ? kanbanLists[i - 1] : undefined}
+                rightKanbanList={i < kanbanLists.length - 1 ? kanbanLists[i + 1] : undefined}
+            />
+        </Grid>
+    ))
 
     // #8e6e95 #39a59c #344759 #e8741e
     return (
         <Fragment>
             <KanbanAppBar/>
-
             <div className='kanban'>
                 <Grid container spacing={3}>
-                    <Grid item xs={12} sm={6} md={4} lg={3}>
-                        <KanbanList
-                            name={listName}
-                            titleBackgroundColor="#8e6e95"
-                            cards={cards} setCards={setCards}
-                            rightCards={cards2} setRightCards={setCards2}
-
-                        />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4} lg={3}>
-                        <KanbanList
-                            name={listName2}
-                            titleBackgroundColor="#39a59c"
-                            cards={cards2} setCards={setCards2}
-                            rightCards={cards3} setRightCards={setCards3}
-                            leftCards={cards} setLeftCards={setCards}
-
-                        />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4}  lg={3}>
-                        <KanbanList
-                            name={listName3}
-                            titleBackgroundColor="#344759"
-                            cards={cards3} setCards={setCards3}
-                            rightCards={cards4} setRightCards={setCards4}
-                            leftCards={cards2} setLeftCards={setCards2}
-
-                        />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4} lg={3}>
-                        <KanbanList
-                            name={listName4}
-                            titleBackgroundColor="#e8741e"
-                            cards={cards4} setCards={setCards4}
-                            leftCards={cards3} setLeftCards={setCards3}
-
-                        />
-                    </Grid>
+                    {kanbanListsJsx}
                 </Grid>
             </div>
         </Fragment>
